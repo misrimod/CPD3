@@ -1,0 +1,191 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #332d2d;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Navigation Styles */
+
+nav {
+    background-color: #5b5151;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+nav ul li a {
+    color:  #f4f4f4;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+ 
+
+/* Header Styles */
+
+
+header{
+    text-align: center;
+} 
+
+header h1 a {
+    font-size: 2.5rem;
+    font-family: 'Black Ops One', sans-serif;
+    color: #698c6d;
+} 
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+} 
+
+ /* Summary */
+
+ .summary{
+    text-align: left;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+ }
+
+ .summary .athlete{
+    margin: 0;
+    text-align: left;
+ }
+
+/* Table Styles */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+
+}
+
+table, th, td {
+    border: 1px solid #698c6d;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+th {
+    background-color: #5b5151;
+    color: white;
+    position: sticky;
+    top: 0; /* This makes the header "stick" at the top when scrolling */
+    z-index: 1; /* Ensures the header stays above the table rows */
+}
+
+
+table caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Alternating row colors */
+table tr:nth-child(even) {
+    background-color: #d3d3d3; /* Light gray background color */
+}
+
+/* Apply background color to odd rows */
+table tr:nth-child(odd) {
+    background-color: #c4dbca; /* green background color */
+} 
+
+table tr:hover {
+    opacity: 0.6; /* Change opacity when hovering */
+}
+
+table td:nth-child(2), table th:nth-child(2) {
+    width: 50%; /* Adjust this percentage or value as needed */
+}
+
+
+
+
+/* Athlete Profile Styles */
+.athlete {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    background-color:  #c4dbca;
+}
+
+.athlete figure {
+    margin: 0;
+}
+
+.athlete img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #698c6d;
+}
+
+.athlete figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.athlete dl {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+} 
+
+.athlete dt {
+    font-weight: bold;
+} 
+
+.athlete dt {
+    color: #5b5151;
+}
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p, footer address {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
