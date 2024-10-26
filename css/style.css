@@ -32,7 +32,6 @@ nav ul li a {
     color:  #f4f4f4;
     text-decoration: none;
     padding: 10px 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -170,6 +169,19 @@ div.athlete {
     100% { transform: scale(1); opacity: 1; }
 }
 
+
+.athlete:hover img {
+    transform: scale(1.1); /* Zooms in slightly */
+}
+
+/* Active and focus effects for touch devices */
+.athlete:active figcaption,
+.athlete:focus-within figcaption {
+    opacity: 1;
+    max-height: 50px;
+}
+
+
 .athlete figcaption {
     margin-top: 10px;
     font-weight: bold;
@@ -187,6 +199,32 @@ div.athlete {
 
 .athlete dt {
     color: #5b5151;
+}
+
+/* Gallery Styles */
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  /* Styling for each image in the gallery */
+#gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+#gallery:hover img{
+    animation: zoomIn 0.6s ease-out;
+}
+ 
+@keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 
@@ -240,7 +278,6 @@ footer a:hover {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
 }
 
@@ -263,5 +300,79 @@ footer a:hover {
     color: #1a4a7a;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none; /* Disable animations */
+    }
+} 
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #2e2e2e; /* Soft dark gray */
+        color: #d1d1d1; /* Muted light gray */
+    }
+
+    body a{
+        color: white
+    }
+
+    nav {
+        background-color: #3a3a3a; /* Darker muted gray for nav */
+    }
+
+    nav ul li a {
+        color: #d1d1d1; /* Soft light gray */
+    }
+
+    nav ul li a:hover {
+        background-color: #4a4a4a; /* Slightly lighter muted gray */
+    }
+
+    header h1 a {
+        color: #a3b5a8; /* Muted sage green */
+    }
+
+    /* Table Styles for Softer Dark Mode */
+    table {
+        background-color: #3a3a3a; /* Dark gray */
+        color: #d1d1d1; /* Soft light gray */
+    }
+
+    th {
+        background-color: #4b4b4b; /* Medium muted gray for headers */
+    }
+
+    table tr:nth-child(even) {
+        background-color: #353535; /* Darker gray for even rows */
+    }
+
+    table tr:nth-child(odd) {
+        background-color: #404040; /* Slightly lighter gray for odd rows */
+    }
+
+    table tr:hover {
+        background-color: #505050; /* Soft hover effect with muted gray */
+    }
+
+    /* Athlete Profile Styles in Softer Dark Mode */
+    div.athlete {
+        background-color: #596955; /* Soft dark gray background */
+    }
+
+    .athlete img {
+        border-color: #6e8976; /* Muted sage green for border */
+    }
+
+    .athlete dt {
+        color: #ffffff; /* Light muted gray */
+    } 
+    .athlete dl {
+        color: #ffffff; /* Light muted gray */
+    } 
+    .athlete figcaption {
+        color: #ffffff;
+    }
+}
 
 
