@@ -1,0 +1,419 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #332d2d;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Navigation Styles */
+
+/* Default (Mobile) View - Vertical Layout */
+
+nav {
+    background-color: #5b5151;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-align: center;
+    width: 100%; /* Makes each link take up full width */
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Desktop View (Horizontal Layout) */
+@media (min-width: 769px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    nav ul li a {
+        width: auto; /* Reverts to natural width of the links */
+    }
+}
+ 
+
+/* Header Styles */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+} 
+
+/* Header Slide Down Animation */
+@keyframes slideDown {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+header{
+    text-align: center;
+    animation: slideDown 1s ease-out;
+} 
+
+header h1 a {
+    font-size: 2.5rem;
+    font-family: 'Black Ops One', sans-serif;
+    color: #698c6d;
+} 
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out 0.5s both;
+} 
+
+ /* Summary */
+
+ .summary{
+    text-align: left;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+ }
+
+ .summary .athlete{
+    margin: 0;
+    text-align: left;
+ }
+
+/* Table Styles */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    animation: grow 0.5s ease-out;
+
+}
+
+table, th, td {
+    border: 1px solid #698c6d;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+th {
+    background-color: #5b5151;
+    color: white;
+    position: sticky;
+    top: 0; /* This makes the header "stick" at the top when scrolling */
+    z-index: 1; /* Ensures the header stays above the table rows */
+}
+
+
+table caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Alternating row colors */
+table tr:nth-child(even) {
+    background-color: #d3d3d3; /* Light gray background color */
+}
+
+/* Apply background color to odd rows */
+table tr:nth-child(odd) {
+    background-color: #c4dbca; /* green background color */
+} 
+
+table tr:hover {
+    opacity: 0.6; /* Change opacity when hovering */
+}
+
+table td:nth-child(2), table th:nth-child(2) {
+    width: 50%; /* Adjust this percentage or value as needed */
+}
+
+
+
+
+/* Athlete Profile Styles */
+div.athlete {
+    text-align: center;
+    margin: 20px;
+    background-color:  #c4dbca;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeIn 0.8s ease-out both;
+}
+
+.athlete figure {
+    margin: 0;
+}
+
+.athlete img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #698c6d;
+    animation: zoomIn 0.6s ease-out;
+
+} 
+
+@keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+.athlete:hover img {
+    transform: scale(1.1); /* Zooms in slightly */
+}
+
+/* Active and focus effects for touch devices */
+.athlete:active figcaption,
+.athlete:focus-within figcaption {
+    opacity: 1;
+    max-height: 50px;
+}
+
+
+.athlete figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.athlete dl {
+    display: grid;
+    grid-template-columns: 10vh auto;
+    grid-template-rows: repeat(3, auto);
+} 
+
+.athlete dt {
+    font-weight: bold;
+} 
+
+.athlete dt {
+    color: #5b5151;
+} 
+
+@media (min-width: 1024px) {
+    div.athlete {
+        display: inline-grid;
+        gap: 20px;
+        justify-content:center;
+        align-items: center;
+    } 
+
+    .athlete img {
+        margin: auto;
+    
+    } 
+}
+
+
+
+
+
+/* Gallery Styles */
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  /* Styling for each image in the gallery */
+#gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+#gallery:hover img{
+    animation: zoomIn 0.6s ease-out;
+}
+ 
+@keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p, footer address {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Homepage Styles */
+
+
+/* File List Container */
+.file-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+} 
+
+.file-list a{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Card Styles */
+.file-list li {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.file-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Link Styles */
+.file-list li a {
+    display: block;
+    padding: 20px;
+    color: #2a76b6;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+}
+
+.file-list li a:hover {
+    color: #1a4a7a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none; /* Disable animations */
+    }
+} 
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #2e2e2e; /* Soft dark gray */
+        color: #d1d1d1; /* Muted light gray */
+    }
+
+    body a{
+        color: white
+    }
+
+    nav {
+        background-color: #3a3a3a; /* Darker muted gray for nav */
+    }
+
+    nav ul li a {
+        color: #d1d1d1; /* Soft light gray */
+    }
+
+    nav ul li a:hover {
+        background-color: #4a4a4a; /* Slightly lighter muted gray */
+    }
+
+    header h1 a {
+        color: #a3b5a8; /* Muted sage green */
+    }
+
+    /* Table Styles for Softer Dark Mode */
+    table {
+        background-color: #3a3a3a; /* Dark gray */
+        color: #d1d1d1; /* Soft light gray */
+    }
+
+    th {
+        background-color: #4b4b4b; /* Medium muted gray for headers */
+    }
+
+    table tr:nth-child(even) {
+        background-color: #353535; /* Darker gray for even rows */
+    }
+
+    table tr:nth-child(odd) {
+        background-color: #404040; /* Slightly lighter gray for odd rows */
+    }
+
+    table tr:hover {
+        background-color: #505050; /* Soft hover effect with muted gray */
+    }
+
+    /* Athlete Profile Styles in Softer Dark Mode */
+    div.athlete {
+        background-color: #596955; /* Soft dark gray background */
+    }
+
+    .athlete img {
+        border-color: #6e8976; /* Muted sage green for border */
+    }
+
+    .athlete dt {
+        color: #ffffff; /* Light muted gray */
+    } 
+    .athlete dl {
+        color: #ffffff; /* Light muted gray */
+    } 
+    .athlete figcaption {
+        color: #ffffff;
+    }
+}
+
+
+.filter{
+    opacity: 50%;
+    filter:grayscale();
+
+}

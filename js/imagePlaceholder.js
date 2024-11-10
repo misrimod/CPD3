@@ -4,7 +4,7 @@ document.querySelectorAll('img').forEach(img => {
 
         this.onerror = null;
         this.src = "../js/placeholder-image.jpg";
-        this.alt = "";
+        this.alt = "default image";
 
 
     }

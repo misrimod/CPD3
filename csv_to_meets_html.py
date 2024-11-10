@@ -52,6 +52,7 @@ def csv_to_html(csv_filename, output_folder):
 <title>{link_text}</title>
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
+<link href="../dist/css/lightbox.css" rel="stylesheet"/>
 </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
@@ -120,7 +121,8 @@ def csv_to_html(csv_filename, output_folder):
                 html_content += f"""
 <div class="athlete">
 <figure> 
-    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
+    <a href = "../images/profiles/{profile_pic}" target="_blank" data-lightbox = "Athletes" data-title="{name}" >
+    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}" > </a>
     <figcaption>{name}</figcaption>
 </figure>
 <dl>
@@ -154,6 +156,13 @@ def csv_to_html(csv_filename, output_folder):
 
                      </footer>
         <script src="../js/imagePlaceholder.js"></script> 
+          <script src="../dist/js/lightbox-plus-jquery.js"></script>
+        <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true 
+        })
+        </script>
         </body>
 </html>
 """
