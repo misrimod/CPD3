@@ -16,6 +16,8 @@ body {
 
 /* Navigation Styles */
 
+/* Default (Mobile) View - Vertical Layout */
+
 nav {
     background-color: #5b5151;
     padding: 10px 0;
@@ -23,20 +25,34 @@ nav {
 
 nav ul {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-
 nav ul li a {
-    color:  #f4f4f4;
+    color: #f4f4f4;
     text-decoration: none;
     padding: 10px 15px;
+    text-align: center;
+    width: 100%; /* Makes each link take up full width */
 }
 
 nav ul li a:hover {
     background-color: #575757;
     border-radius: 5px;
+}
+
+/* Desktop View (Horizontal Layout) */
+@media (min-width: 769px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    nav ul li a {
+        width: auto; /* Reverts to natural width of the links */
+    }
 }
  
 
@@ -199,7 +215,25 @@ div.athlete {
 
 .athlete dt {
     color: #5b5151;
+} 
+
+@media (min-width: 1024px) {
+    div.athlete {
+        display: inline-grid;
+        gap: 20px;
+        justify-content:center;
+        align-items: center;
+    } 
+
+    .athlete img {
+        margin: auto;
+    
+    } 
 }
+
+
+
+
 
 /* Gallery Styles */
 
@@ -226,6 +260,8 @@ div.athlete {
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
+
+
 
 
 
@@ -376,3 +412,8 @@ footer a:hover {
 }
 
 
+.filter{
+    opacity: 50%;
+    filter:grayscale();
+
+}
